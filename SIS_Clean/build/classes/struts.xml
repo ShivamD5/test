@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" extends="struts-default,json-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name="updateSubjectsAction" class="dao.CourseDao"
+			method="updateSubjects">
+			<result name="success" type="tiles">AdminUpdateCourse</result>
+			<result name="error">addError.jsp</result>
+		</action>
+		
+		
+		<action name="updateSubject" class="dao.CourseDao"
+			method="update">
+			<result name="success" type="tiles">AdminHome</result>
+			
+		</action>
+		<action name="syllabusAction" class="action.SubjectsDisplayAction"
+			method="syllabus">
+			<result name="success" type="tiles">StudentViewSyllabus</result>
+			
+		</action>
+		
+		<action name="Q1Action" class="action.Q1Action" method="execute">
+			<result name="success" type="tiles">Q1</result>
+			
+		</action>
+		<action name="Q2streamsubject" class="action.Q1Action" method="q2streamsubject">
+			<result name="success" type="tiles">q2streamsubject</result>
+			
+		</action>
+		
+
+		<action name="NotificationFriend" class="action.NotificationFriend">
+
+			<result name="success" type="tiles">notification</result>
+
+
+		</action>
+		<action name="Q2showstudent" class="action.Q2showstudent">
+
+			<result name="success" type="tiles">Q2showstudent</result>
+
+
+		</action>
+		
+		
+		<action name="Notification" class="action.Notification">
+
+			<result name="success" type="tiles">notification</result>
+
+
+		</action>
+			<action name="Q2AddStream" class="action.DefaultAction" method="Q2AddStream">
+
+			<result name="success" type="tiles">Q2AddStream</result>
+
+
+		</action>
+		
+		<action name="Q2AddStreamdao" class="action.Q2AddStream" method="execute">
+
+			<result name="success" type="tiles">Q2AddStream</result>
+			<result name="error" type="tiles">Q2AddStream</result>
+
+
+		</action>
+
+
+
+
+		<!-- <action name="admin" class="dao.CourseDao">
+			<result name="success">/Admin home.jsp</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/news.html</result>
+		</action> -->
+		
+		<action name="enrollcourse" class="action.enrollcourse">
+			<result name="success" type="tiles">StudentEnrollCourse</result>
+
+		</action>
+		<action name="enrollcourseinsert" class="action.enrollcoursetemp">
+			<result name="success" type="tiles">StudentEnrollCourse</result>
+
+
+
+		</action>
+		<action name="enrollCourses" class="action.EnrollCourses">
+			<result name="success" type="tiles">AdminApproveCourse</result>
+
+
+		</action>
+
+		<action name="enrollCourseUpdate" class="action.EnrollCoursesUpdate">
+			<result name="success" type = "tiles">AdminEnrollView</result>
+
+		</action>
+		<action name="gradeInsert" class="action.gradeAction" method="insertGrade">
+			<result name="success" type="tiles">FacultyGrades</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/news.html</result>
+		</action>
+
+		<action name="gradeInsertUpdate" class="action.gradeAction"
+			method="insertGradeUpdate">
+			<result name="success" type="tiles">FacultyUpdateGrades</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/news.html</result>
+		</action>
+		<action name="initSubjectsAction" class="dao.CourseDao" method="initSubjects">
+			<result name="success" type="tiles">AdminAddCourse</result>
+			<result name="error">addError.jsp</result>
+		</action>
+
+		<action name="initGradeAction" class="action.gradeAction"
+			method="fillCourse">
+			<result name="success" type="tiles">FacultyGrades</result>
+			<result name="error">addError.jsp</result>
+		</action>
+		<action name="initViewGradeAction" class="action.gradeAction"
+			method="fillCourse">
+			<result name="success" type="tiles">FacultyViewGrades</result>
+			<result name="error">addError.jsp</result>
+		</action>
+		<action name="initUpdateGradeAction" class="action.gradeAction"
+			method="fillCourse">
+			<result name="success" type="tiles">FacultyUpdateGrades</result>
+			<result name="error">addError.jsp</result>
+		</action>
+		<!-- <action name="courseFill" class="action.gradeAction" method="initGrade"> 
+			<result type="json"></result> </action> <action name="studentFill" class="action.gradeAction" 
+			method="initStudent"> <result type="json"></result> </action> -->
+
+		<action name="courseStudents" class="action.gradeAction"
+			method="courseStudents">
+			<result name="success" type="tiles">FacultyGrades</result>
+			<result name="error">addError.jsp</result>
+			<result name="login">adminhome.jsp</result>
+		</action>
+		<action name="courseStudentsView" class="action.gradeAction"
+			method="courseStudents">
+			<result name="success" type="tiles">FacultyViewGrades</result>
+			<result name="error">addError.jsp</result>
+			<result name="login">adminhome.jsp</result>
+		</action>
+		<action name="courseStudentsUpdate" class="action.gradeAction"
+			method="courseStudents">
+			<result name="success" type="tiles">FacultyUpdateGrades</result>
+			<result name="error">addError.jsp</result>
+			<result name="login">adminhome.jsp</result>
+		</action>
+		<action name="currentGrade" class="action.gradeAction" method="currentGrade">
+			<result name="success" type="tiles">FacultyUpdateGrades</result>
+			<result name="error">addError.jsp</result>
+			<result name="login">adminhome.jsp</result>
+		</action>
+
+
+		<action name="login" class="action.Login">
+			<result name="admin" type="tiles">AdminHome</result>
+			<result name="error">login.jsp</result>
+			<result name="student" type="tiles">StudentHome</result>
+			<result name="faculty" type="tiles">FacultyHome</result>
+		</action>
+
+		<action name="subjectsCodeAction" class="action.SubjectsDisplayAction"
+			method="codeCheck">
+			<result name="success" type="tiles">AdminAddCourse</result>
+			<result name="error">addError.jsp</result>
+			<result name="login">Admin home.jsp</result>
+		</action>
+		<action name="subjectsDisplayAction" class="action.SubjectsDisplayAction"
+			method="execute">
+			<result name="success" type="tiles">StudentViewSubjects</result>
+			<result name="error">addError.jsp</result>
+			<result name="login">Admin home.jsp</result>
+		</action>
+
+		<action name="register" class="action.FacultyRegister">
+
+			<result name="success" type="tiles">AdminAddFaculty</result>
+			<result name="error" type="tiles">AdminAddFaculty</result>
+		</action>
+
+		<action name="studentGradesAction" class="action.StudentGradesAction">
+			<result name="success" type="tiles">GradesTable</result>
+
+		</action>
+
+<!-- 		<action name="addNewsAction" class="action.news.AddNewsAction"> -->
+<!-- 			<result name="success">/newsSuccess.jsp</result> -->
+<!-- 			<result name="error">/newsError.jsp</result> -->
+<!-- 			<result name="input">/newsError.jsp</result> -->
+<!-- 		</action> -->
+<!-- 		<action name="removeNewsAction" class="action.news.RemoveNewsAction"> -->
+<!-- 			<result name="success" type="tiles">AdminRemoveNews</result> -->
+<!-- 			<result name="error">/removeNewsError.jsp</result> -->
+<!-- 			<result name="input">/removeNewsError.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="removeNews" class="action.news.RemoveNews"> -->
+<!-- 			<result name="success">/unidentified.jsp</result> -->
+<!-- 			<result name="error">/removeNewsError.jsp</result> -->
+<!-- 			<result name="input">/removeNewsError.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="addAnnouncementAction" class="action.announcement.AddAnnouncementAction"> -->
+<!-- 			<result name="success">/announcementSuccess.jsp</result> -->
+<!-- 			<result name="error">/announcementError.jsp</result> -->
+<!-- 			<result name="input">/announcementError.jsp</result> -->
+<!-- 		</action> -->
+
+
+<!-- 		<action name="removeAnnouncementAction" class="action.announcement.RemoveAnnouncementAction"> -->
+<!-- 			<result name="success" type="tiles">AdminRemoveAnnouncemet</result> -->
+<!-- 			<result name="error">/announcementError.jsp</result> -->
+<!-- 			<result name="input">/announcementError.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="removeAnnouncement" class="action.announcement.RemoveAnnouncement"> -->
+<!-- 			<result name="success">/unidentifiedAnc.jsp</result> -->
+<!-- 			<result name="error">/announcementError.jsp</result> -->
+<!-- 			<result name="input">/announcementError.jsp</result> -->
+<!-- 		</action> -->
+		<action name="AddUser" class="action.AddUser">
+
+			<result name="success" type="tiles">AdminAddUser</result>
+			<result name="error" type="tiles">AdminAddUser</result>
+
+
+		</action>
+
+		<action name="getFriend" class="action.ActionFriend" method="execute">
+			<result name="success" type="tiles">StudentFriends</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="SearchUser" class="action.SearchUser" method="execute">
+			<result name="success" type="tiles">StudentFriends</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="admin" class="dao.CourseDao">
+
+			<result name="success" type = "tiles">AdminAddCourse</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/news.html</result>
+
+		</action>
+		<action name="deladdFriend" class="action.deladdFriend">
+
+			<result name="success" type="tiles">StudentFriends</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/news.html</result>
+
+		</action>
+<!-- 		<action name="showAnnouncement" class="action.announcement.ShowAnnouncement"> -->
+<!-- 			<result name="success">/StudentShowAnnouncement.jsp</result> -->
+<!-- 			<result name="error">/removeAnnouncementError.html</result> -->
+<!-- 			<result name="input">/removeAnnouncementError.html</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="showNews" class="action.news.ShowNews"> -->
+<!-- 			<result name="success">/StudentShowNews.jsp</result> -->
+<!-- 			<result name="error">/removeAnnouncementError.html</result> -->
+<!-- 			<result name="input">/removeAnnouncementError.html</result> -->
+<!-- 		</action> -->
+
+
+
+		<action name="getNews" class="action.news.ShowNews" method="getNews">
+			<result name="success">/StudentShowNewsDiscription.jsp</result>
+			<result name="error">/removeAnnouncementError.html</result>
+			<result name="input">/removeAnnouncementError.html</result>
+		</action>
+
+		<action name="StudentViewGrades" class="action.DefaultAction"
+			method="ViewGrades">
+			<result name="success" type="tiles">StudentViewGrades</result>
+		</action>
+
+		<action name="AdminAddUser" class="action.DefaultAction"
+			method="AdminAddUser">
+			<result name="success" type="tiles">AdminAddUser</result>
+		</action>
+
+		<action name="AdminAddFaculty" class="action.DefaultAction"
+			method="AdminAddFaculty">
+			<result name="success" type="tiles">AdminAddFaculty</result>
+		</action>
+		
+		<action name="addinterest" class="action.DefaultAction"
+			method="addInterest">
+			<result name="success" type="tiles">addinterest</result>
+		</action>
+
+<!-- 		<action name="AdminAddNews" class="action.DefaultAction" -->
+<!-- 			method="AdminAddNews"> -->
+<!-- 			<result name="success" type="tiles">AdminAddNews</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="AdminAddAnnouncemet" class="action.DefaultAction" -->
+<!-- 			method="AdminAddAnnouncemet"> -->
+<!-- 			<result name="success" type="tiles">AdminAddAnnouncemet</result> -->
+<!-- 		</action> -->
+
+
+
+		<action name="ResetPassword" class="action.ResetPassword"
+			method="action">
+
+			<result name="success" type="tiles">resetPassword</result>
+		</action>
+		
+		<action name="ResetPassword_faculty" class="action.ResetPassword"
+			method="action">
+
+			<result name="success" type="tiles">resetPassword_faculty</result>
+		</action>
+		
+		
+		
+		
+		<action name="AdminAddNews" class= "action.news.AddNewsAction" method = "interest">
+			<result name="success" type = "tiles">AdminAddNews</result>
+			<result name="error" type = "tiles">AdminAddNews</result>
+		</action>
+ 
+		<action name="addNewsAction" class="action.news.AddNewsAction">
+			<result name="success" type = "tiles">AdminAddNews</result>
+			<result name="error" type = "tiles">AdminAddNews</result>
+		</action>
+						
+		<action name="removeNewsAction" class="action.news.RemoveNewsAction" method="getNews">
+			<result name="success" type = "tiles" >AdminRemoveNews</result>
+			<result name="error" type = "tiles" >AdminRemoveNews</result><!-- /removeNewsError.jsp</result> -->
+		</action>
+
+		<action name="removeNews" class="action.news.RemoveNewsAction">
+		    <result name="success" type = "tiles" >AdminRemoveNews</result>
+			<result name="error" type = "tiles" >AdminRemoveNews</result>
+		</action>
+
+		<action name="AdminAddAnnouncemet" class= "action.DefaultAction" method = "AdminAddAnnouncemet">
+			<result name="success" type = "tiles">AdminAddAnnouncemet</result>
+		</action>
+		
+		<action name="addAnnouncementAction" class="action.announcement.AddAnnouncementAction">
+		    <result name="success" type = "tiles">AdminAddAnnouncemet</result>
+		    <result name="error" type = "tiles">AdminAddAnnouncemet</result>
+		</action>
+				
+		<action name="removeAnnouncementAction" class="action.announcement.RemoveAnnouncementAction" method="getAnc">
+			<result name="success" type = "tiles">AdminRemoveAnnouncemet</result>
+			<result name="error"  type = "tiles">AdminRemoveAnnouncemet</result>
+		</action>
+
+		<action name="removeAnnouncement" class="action.announcement.RemoveAnnouncementAction">
+			<result name="success" type = "tiles">AdminRemoveAnnouncemet</result>
+			<result name="error"  type = "tiles">AdminRemoveAnnouncemet</result>
+		</action>
+
+	</package>
+
+
+
+</struts>
+
+
+
+
+<!-- <action name="updateGradesAction" class="action.admin.UpdateGradesAction" 
+	method="execute"> <result name="success">addSuccess.jsp</result> <result 
+	name="error">addError.jsp</result> <result name="login">adminhome.jsp</result> 
+	</action> -->
+
+
+
+<!-- <action name="assignGradesAction" class="action.admin.AssignGradesAction" 
+	method="execute"> <result name="success">multiListDemo.jsp</result> <result 
+	name="error">addError.jsp</result> <result name="login">Admin home.html</result> 
+	</action> <action name="assignGradesAction1" class="action.admin.AssignGradesAction" 
+	method="course"> <result name="success">multiListDemo.jsp</result> <result 
+	name="error">addError.jsp</result> <result name="login">Admin home.html</result> 
+	</action> <action name="assignGradesAction2" class="action.admin.AssignGradesAction" 
+	method="admin"> <result name="success">Admin home.html</result> <result name="error">addError.jsp</result> 
+	<result name="login">Admin home.html</result> </action> -->
+		
+			
+	

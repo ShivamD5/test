@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Twitter Bootstrap 3 - Creativity Tuts</title>
+    
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+</head>
+
+<body style="background-color:#E6E6FA">
+    
+   <!-- Fixes Navigation Bar with drop down menu
+    ======================================================-->
+    
+    <div class="navbar navbar-default navbar-fixed-top navbar-hover"  style="background:#6495ED	\">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="buttton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a href="Admin home.html" class="navbar-brand">Admin</a>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+					
+                    <li class = "active"><a href="users.html">Add Users
+                    <span class = "sr-only">(current)</span></a></li>
+                    <li><a href="course.html">Add course</a></li>
+                    <li><a href="faculty.html">Add faculty</a></li>
+					<li><a href="grades.html">Assign grades</a></li>
+					<li><a href="news.html">News/Announcement</a></li>
+                    <li><a href="search.jsp">Search</a></li>
+					
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+	<br></br>
+				
+	
+				
+	 <!-- Login
+    ==========================-->
+	</br>
+	
+	<div class="jumbotron container" style="background:#6495ED" >
+		<div class="row">
+			<div class="col-md-12">
+				
+				<div class="col-sm-offset-2 col-lg-10"> <h2><font color="#333">Login</font></h2> </div> <hr/>
+				
+				<form class="form-horizontal">
+					
+					<div class="form-group">
+						<!-- <label for="name"  class="col-sm-2 control-label"> <p class="textinfo" ><font color="green">Name</font> </p></label>  -->
+						<div class="col-sm-offset-2 col-sm-6">
+							<input type="text" class="form-control" placeholder="Enter Name..."/>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<!-- <label for="email" class="col-sm-2 control-label"><p class="textinfo" ><font color="green">Password</font>  </p></label> -->
+							<div class="col-sm-offset-2 col-sm-6">
+							<input type="password" class="col-sm-6 form-control" placeholder="Enter Password..."/>
+							</div>
+						</div>
+					</div>
+					
+					
+					 <div class="form-group">
+						<div class="col-sm-offset-2 col-sm-6">
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="reset" class="btn btn-success">Clear</button>
+						</div>
+					</div>
+					
+				</form>
+				
+				
+			</div>
+		</div>
+   </div>
+	
+	
+	
+	
+	
+    
+    <!-- Footer and Modal
+    ==========================-->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <hr/>
+                <p>Copyright &copy; Student Information System.
+                    <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+                </p>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabinex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Terms and Conditions</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p>The text will go here.....</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

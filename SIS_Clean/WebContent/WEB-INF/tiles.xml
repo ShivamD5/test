@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="SL" template="/Tiles/_Layout.jsp">
+		<put-attribute name="strutsInclude" value="/Tiles/IncludeStruts.jsp" />
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="navBar" value="/Tiles/StudentNavbar.jsp" />
+		<put-attribute name="IncludeExt" value="/Tiles/Include.jsp" />
+		<put-attribute name="body" value="/Student.jsp" />
+		<put-attribute name="footer" value="/Tiles/Footer.jsp" />
+	</definition>
+
+	<definition name="FL" template="/Tiles/_Layout.jsp">
+		<put-attribute name="strutsInclude" value="/Tiles/IncludeStruts.jsp" />
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="navBar" value="/Tiles/FacultyNavbar.jsp" />
+		<put-attribute name="IncludeExt" value="/Tiles/Include.jsp" />
+		<put-attribute name="body" value="/Student.jsp" />
+		<put-attribute name="footer" value="/Tiles/Footer.jsp" />
+	</definition>
+
+	<definition name="AL" template="/Tiles/_Layout.jsp">
+		<put-attribute name="strutsInclude" value="/Tiles/IncludeStruts.jsp" />
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="navBar" value="/Tiles/AdminNavbar.jsp" />
+		<put-attribute name="IncludeExt" value="/Tiles/Include.jsp" />
+		<put-attribute name="body" value="/Student.jsp" />
+		<put-attribute name="footer" value="/Tiles/Footer.jsp" />
+	</definition>
+	<definition name="AdminUpdateCourse" extends="AL">
+		<put-attribute name="title" value="Update Course" />
+		<put-attribute name="body" value="/updateCourse.jsp" />
+	</definition>
+	<definition name="addinterest" extends="AL">
+		<put-attribute name="title" value="add interest" />
+		<put-attribute name="body" value="/addinterest.jsp" />
+	</definition>
+	
+	<definition name="StudentViewSyllabus" extends="SL">
+        <put-attribute name="title" value="Student View Syllabus" />
+        <put-attribute name="body" value="/ViewSyllabus.jsp" />
+    </definition>
+    
+    <definition name="Q1" extends="SL">
+        <put-attribute name="title" value="Details of sem" />
+        <put-attribute name="body" value="/Q1.jsp" />
+    </definition>
+
+	<definition name="notification" extends="SL">
+		<put-attribute name="title" value="Notification" />
+		<put-attribute name="body" value="/notification.jsp" />
+	</definition>
+	<definition name="GradesTable" extends="SL">
+		<put-attribute name="title" value="Student Grade" />
+		<put-attribute name="body" value="/GradesTable.jsp" />
+	</definition>
+
+	<definition name="resetPassword" extends="SL">
+		<put-attribute name="title" value="Reset Password" />
+		<put-attribute name="body" value="/resetPassword.jsp" />
+	</definition>
+
+	<definition name="StudentHome" extends="SL">
+		<put-attribute name="title" value="Student Home" />
+		<put-attribute name="body" value="/Student.jsp" />
+	</definition>
+
+	<definition name="StudentEnrollCourse" extends="SL">
+		<put-attribute name="title" value="Student Enroll Course" />
+		<put-attribute name="body" value="/enrollcourse.jsp" />
+	</definition>
+
+	<definition name="StudentViewGrades" extends="SL">
+		<put-attribute name="title" value="Student View Grades" />
+		<put-attribute name="body" value="/ViewGrades.jsp" />
+	</definition>
+
+	<definition name="StudentViewSubjects" extends="SL">
+		<put-attribute name="title" value="Student View Subjects" />
+		<put-attribute name="body" value="/viewSubjects.jsp" />
+	</definition>
+	
+		<definition name="q2streamsubject" extends="SL">
+		<put-attribute name="title" value="View stream Subjects" />
+		<put-attribute name="body" value="/Q2streamsubject.jsp" />
+	</definition>
+	
+	<definition name="Q2showstudent" extends="SL">
+		<put-attribute name="title" value="View Students" />
+		<put-attribute name="body" value="/Q2showstudent.jsp" />
+	</definition>
+
+	<definition name="StudentFriends" extends="SL">
+		<put-attribute name="title" value="Student Friends" />
+		<put-attribute name="body" value="/friends.jsp" />
+	</definition>
+
+	<definition name="FacultyHome" extends="FL">
+		<put-attribute name="title" value="Faculty Home" />
+		<put-attribute name="body" value="/faculty.jsp" />
+	</definition>
+
+	<definition name="FacultyGrades" extends="FL">
+		<put-attribute name="title" value="Faculty Grades" />
+		<put-attribute name="body" value="/grades.jsp" />
+	</definition>
+
+	<definition name="FacultyViewGrades" extends="FL">
+		<put-attribute name="title" value="Faculty View Grades" />
+		<put-attribute name="body" value="/ViewGradesFaculty.jsp" />
+	</definition>
+
+	<definition name="FacultyUpdateGrades" extends="FL">
+		<put-attribute name="title" value="Faculty Update Grades" />
+		<put-attribute name="body" value="/UpdateGradesFaculty.jsp" />
+	</definition>
+	
+	<definition name="resetPassword_faculty" extends="FL">
+		<put-attribute name="title" value="Reset Password" />
+		<put-attribute name="body" value="/resetPassword.jsp" />
+	</definition>
+
+	<definition name="AdminHome" extends="AL">
+		<put-attribute name="title" value="Admin Home" />
+		<put-attribute name="body" value="/Admin home.jsp" />
+	</definition>
+
+	<definition name="AdminAddUser" extends="AL">
+		<put-attribute name="title" value="Add Users" />
+		<put-attribute name="body" value="/AddUser.jsp" />
+	</definition>
+
+	<definition name="AdminAddUserSuccess" extends="AL">
+		<put-attribute name="title" value="Add Users Success" />
+		<put-attribute name="body" value="/AddUser_Success.jsp" />
+	</definition>
+
+
+	<definition name="AdminAddCourse" extends="AL">
+		<put-attribute name="title" value="Add Course" />
+		<put-attribute name="body" value="/course.jsp" />
+	</definition>
+	
+	<definition name="Q2AddStream" extends="AL">
+		<put-attribute name="title" value="Add Stream" />
+		<put-attribute name="body" value="/Q2AddStream.jsp" />
+	</definition>
+
+	<definition name="AdminAddFaculty" extends="AL">
+		<put-attribute name="title" value="Add Faculty" />
+		<put-attribute name="body" value="/addfaculty.jsp" />
+	</definition>
+
+	<definition name="AdminAddNews" extends="AL">
+		<put-attribute name="title" value="Add News" />
+		<put-attribute name="body" value="/news.jsp" />
+	</definition>
+
+	<definition name="AdminRemoveNews" extends="AL">
+		<put-attribute name="title" value="Remove News" />
+		<put-attribute name="body" value="/removeNews.jsp" />
+	</definition>
+
+	<definition name="AdminAddAnnouncemet" extends="AL">
+		<put-attribute name="title" value="Remove News" />
+		<put-attribute name="body" value="/announcement.jsp" />
+	</definition>
+
+	<definition name="AdminRemoveAnnouncemet" extends="AL">
+		<put-attribute name="title" value="Remove Announcement" />
+		<put-attribute name="body" value="/removeAnnouncement.jsp" />
+	</definition>
+
+	<definition name="AdminApproveCourse" extends="AL">
+		<put-attribute name="title" value="Approve Course" />
+		<put-attribute name="body" value="/AdminEnrollView.jsp" />
+	</definition>
+	
+	<definition name="AdminEnrollView" extends="AL">
+		<put-attribute name="title" value="Approve Course" />
+		<put-attribute name="body" value="/AdminEnrollView.jsp" />
+	</definition>
+
+
+
+</tiles-definitions>
